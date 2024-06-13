@@ -1,5 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const { faker } = require('@faker-js/faker');
+const fs = require('fs');
+const path = require('path');
 
 test('Form Submission and Validation with Debugging and Log Output', async ({ page }) => {
     // Enable verbose logging
@@ -19,6 +21,7 @@ test('Form Submission and Validation with Debugging and Log Output', async ({ pa
     console.log('Verifying page content');
     await expect(await page.locator('h4.card-header:has-text("Current cats")').innerText()).toContain('Current cats');
     console.log('Page content verified');
+    await page.waitForTimeout(500);
 
     // Generate dynamic data using faker
     console.log('Generating dynamic data using faker');
@@ -33,11 +36,13 @@ test('Form Submission and Validation with Debugging and Log Output', async ({ pa
     await page.fill('input[name="age"]', catAge.toString()); // Ensure age is converted to string
     await page.fill('input[name="weight"]', catWeight.toString()); // Ensure weight is converted to string
     console.log('Form fields filled');
+    await page.waitForTimeout(1000);
 
     // Submit the form
     console.log('Submitting the form');
     await page.click('app-add-cat-form button[type="submit"]'); // Adjust selector based on your actual HTML
-    console.log('Form submitted');
+    console.log('Form submitted');await page.waitForTimeout(2000);
+
 
     // Wait for the form submission to complete and the new cat to appear in the list
     console.log('Waiting for the new cat to appear in the list');
@@ -51,4 +56,12 @@ test('Form Submission and Validation with Debugging and Log Output', async ({ pa
     await expect(newCatRow).toContainText(catAge.toString());
     await expect(newCatRow).toContainText(catWeight.toString());
     console.log('New cat data validated');
+
+    // Take a screenshot and save it
+    const screenshotPath = path.join(__dirname, 'screenshots', `cat_submission_${Date.now()}.png`);
+    console.log(`Taking screenshot and saving to ${screenshotPath}`);
+    await page.screenshot({ path: screenshotPath });
+
+    // Optionally, you can log the path to the screenshot for reference
+    console.log(`Screenshot saved to ${screenshotPath}`);
 });

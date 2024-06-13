@@ -18,12 +18,14 @@ test('Handling Authentication or Pop-ups with Debugging and Log Output', async (
     console.log('Verifying page content');
     await expect(page.locator('h4.card-header')).toHaveText('Login');
     console.log('Page content verified');
+    await page.waitForTimeout(500);
 
     // Fill out the login form
     console.log('Filling out the login form');
     await page.fill('input[name="email"]', 'user@gmail.com'); // Replace with your email
     await page.fill('input[name="password"]', 'user123'); // Replace with your password
     console.log('Login form filled');
+    await page.waitForTimeout(1500);
 
     // Submit the form
     console.log('Submitting the login form');
@@ -39,6 +41,7 @@ test('Handling Authentication or Pop-ups with Debugging and Log Output', async (
     console.log('Asserting successful navigation to the main page');
     await expect(page).toHaveURL('http://localhost:3000/');
     console.log('Successfully navigated to the main page');
+    await page.waitForTimeout(1000);
 
     // Click the logout link
     console.log('Clicking the logout link');

@@ -18,28 +18,28 @@
             <i class="fa fa-list"></i> Cats
           </a>
         </li>
-        <li class="nav-item">
-          <a routerLink="/login" class="nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
+        <li class="nav-item" *ngIf="!auth.loggedIn">
+          <a routerLink="/login" class="nav-link" routerLinkActive="active">
             <i class="fa fa-sign-in"></i> Login
           </a>
         </li>
-        <li class="nav-item">
-          <a routerLink="/register" class="nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
+        <li class="nav-item" *ngIf="!auth.loggedIn">
+          <a routerLink="/register" class="nav-link" routerLinkActive="active">
             <i class="fa fa-user-plus"></i> Register
           </a>
         </li>
-        <li class="nav-item">
-          <a routerLink="/account" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+        <li class="nav-item" *ngIf="auth.loggedIn">
+          <a routerLink="/account" class="nav-link" routerLinkActive="active">
             <i class="fa fa-user"></i> Account ({{auth.currentUser.username}})
           </a>
         </li>
-        <li class="nav-item">
-          <a routerLink="/admin" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
+        <li class="nav-item" *ngIf="auth.loggedIn && auth.isAdmin">
+          <a routerLink="/admin" class="nav-link" routerLinkActive="active">
             <i class="fa fa-lock"></i> Admin
           </a>
         </li>
-        <li class="nav-item">
-          <a routerLink="/logout" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+        <li class="nav-item" *ngIf="auth.loggedIn">
+          <a href="javascript:void(0)" class="nav-link" (click)="logout()">
             <i class="fa fa-sign-out"></i> Logout
           </a>
         </li>

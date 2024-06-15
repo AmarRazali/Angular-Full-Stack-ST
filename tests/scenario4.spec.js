@@ -45,6 +45,6 @@ test('Intercepting GET Request to /api/cats with Debugging and Log Output', asyn
         console.log(`Checking visibility of cat weight: ${cat.weight}`);
         await expect(page.locator(weightLocator)).toBeVisible();
     }
-    await page.waitForTimeout(1500);
+    await page.waitForTimeout(5000);
     console.log('Test completed successfully!');
 });

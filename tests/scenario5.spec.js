@@ -28,7 +28,7 @@ test.describe('Cross-browser Testing on Form Submission and Validation with Debu
                 console.log(`Verifying page content in ${browserType}`);
                 await expect(await page.locator('h4.card-header:has-text("Current cats")').innerText()).toContain('Current cats');
                 console.log(`Page content verified in ${browserType}`);
-                await page.waitForTimeout(500);
+                await page.waitForTimeout(1000);
 
                 // Generate dynamic data using faker
                 const catName = faker.animal.cat(); // Generate a random cat name
@@ -49,6 +49,7 @@ test.describe('Cross-browser Testing on Form Submission and Validation with Debu
                 console.log(`Submitting the form in ${browserType}`);
                 await page.click('app-add-cat-form button[type="submit"]');
                 console.log(`Form submitted in ${browserType}`);
+                await page.waitForTimeout(1000);
 
                 // Wait for the form submission to complete and the new cat to appear in the list
                 console.log(`Waiting for the form submission to complete in ${browserType}`);
@@ -63,7 +64,6 @@ test.describe('Cross-browser Testing on Form Submission and Validation with Debu
                 await expect(newCatRow).toContainText(catWeight.toString());
                 console.log(`New cat data validated in ${browserType}`);
 
-                await page.waitForTimeout(1000);
             } finally {
                 // Close the context after each test
                 console.log(`Closing the context in ${browserType}`);

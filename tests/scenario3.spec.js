@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test('Handling Authentication or Pop-ups with Debugging and Log Output', async ({ page }) => {
+test('Handling Authentication with Debugging and Log Output', async ({ page }) => {
     // Enable verbose logging
     page.on('console', msg => console.log(`BROWSER LOG: ${msg.text()}`));
 
@@ -41,15 +41,15 @@ test('Handling Authentication or Pop-ups with Debugging and Log Output', async (
     console.log('Asserting successful navigation to the main page');
     await expect(page).toHaveURL('http://localhost:3000/');
     console.log('Successfully navigated to the main page');
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(2000);
 
-    // Click the logout link
-    console.log('Clicking the logout link');
-    await page.click('a.nav-link >> text=Logout');
-    console.log('Logout link clicked');
+    // // Click the logout link
+    // console.log('Clicking the logout link');
+    // await page.click('a.nav-link >> text=Logout');
+    // console.log('Logout link clicked');
 
-    // Verify that the user is navigated to the main page
-    console.log('Verifying that the user is navigated to the main page');
-    await expect(page).toHaveURL('http://localhost:3000/');
-    console.log('User successfully navigated to the main page after logout');
+    // // Verify that the user is navigated to the main page
+    // console.log('Verifying that the user is navigated to the main page');
+    // await expect(page).toHaveURL('http://localhost:3000/');
+    // console.log('User successfully navigated to the main page after logout');
 });

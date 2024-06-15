@@ -1,0 +1,118 @@
+
+Running 7 tests using 4 workers
+
+Navigating to the homepage: http://localhost:3000
+Navigating to the login page: http://localhost:3000/login
+Navigating to the cats page: http://localhost:3000/cats
+Navigating to Cats page...
+Homepage loaded
+Waiting for the cats table to be visible...
+Cats page loaded
+Verifying page title
+Login page loaded
+Verifying page title
+Validating cat: Siberian, 9, 4.4
+Checking visibility of cat name: Siberian
+Page title verified
+Verifying page content
+Checking visibility of cat age: 9
+Page title verified
+Verifying page content
+Checking visibility of cat weight: 4.4
+Page content verified
+Verifying page title
+Page title verified
+Filling out the login form
+Login form filled
+Page content verified
+Verifying page content
+Page content verified
+Generating dynamic data using faker
+Generated data - Name: American Wirehair, Age: 7, Weight: 5.7
+Filling out the form fields
+Form fields filled
+Navigating to the Cats page
+Cats page loaded
+Verifying Cats page content
+Cats page content verified
+Submitting the login form
+Login form submitted
+Waiting for navigation to complete
+Navigation complete
+Asserting successful navigation to the main page
+Successfully navigated to the main page
+Submitting the form
+Form submitted
+Navigating to the Login page
+Login page loaded
+BROWSER LOG: Autofocus processing was blocked because a document already has a focused element.
+Verifying Login page content
+Login page content verified
+Navigating to the Register page
+Register page loaded
+Verifying Register page content
+Register page content verified
+  ✓  1 tests/scenario3.spec.js:3:1 › Handling Authentication with Debugging and Log Output (5.1s)
+Waiting for the new cat to appear in the list
+New cat appeared in the list
+Validating the new cat data
+New cat data validated
+Taking screenshot and saving to /Users/amaraz/Developer/SoftwareTesting/Angular-Full-Stack-ST/Angular-Full-Stack-ST/tests/screenshots/cat_submission_1718281573280.png
+Screenshot saved to /Users/amaraz/Developer/SoftwareTesting/Angular-Full-Stack-ST/Angular-Full-Stack-ST/tests/screenshots/cat_submission_1718281573280.png
+  ✓  2 tests/scenario2.spec.js:6:1 › Form Submission and Validation with Debugging and Log Output (5.4s)
+Test completed successfully!
+  ✓  3 tests/scenario4.spec.js:3:1 › Intercepting GET Request to /api/cats with Debugging and Log Output (5.8s)
+  ✓  4 tests/scenario1.spec.js:3:1 › Basic Navigation and Element Interaction with Debugging and Log Output (5.9s)
+Navigating to the cats page in chromium
+Cats page loaded in chromium
+Verifying page title in chromium
+Page title verified in chromium
+Verifying page content in chromium
+Page content verified in chromium
+Generated cat data: Snowshoe, Age: 1, Weight: 3.1 in chromium
+Filling out the form fields in chromium
+Form fields filled in chromium
+Submitting the form in chromium
+Form submitted in chromium
+Waiting for the form submission to complete in chromium
+Form submission completed and new cat appeared in the list in chromium
+Validating the new cat data in chromium
+New cat data validated in chromium
+Closing the context in chromium
+  ✓  5 tests/scenario5.spec.js:8:9 › Cross-browser Testing on Form Submission and Validation with Debugging and Log Output › chromium (3.4s)
+Navigating to the cats page in firefox
+Cats page loaded in firefox
+Verifying page title in firefox
+Page title verified in firefox
+Verifying page content in firefox
+Page content verified in firefox
+Generated cat data: Bengal, Age: 15, Weight: 8 in firefox
+Filling out the form fields in firefox
+Form fields filled in firefox
+Submitting the form in firefox
+Form submitted in firefox
+Waiting for the form submission to complete in firefox
+Form submission completed and new cat appeared in the list in firefox
+Validating the new cat data in firefox
+New cat data validated in firefox
+Closing the context in firefox
+  ✓  6 tests/scenario5.spec.js:8:9 › Cross-browser Testing on Form Submission and Validation with Debugging and Log Output › firefox (3.4s)
+Navigating to the cats page in webkit
+Cats page loaded in webkit
+Verifying page title in webkit
+Page title verified in webkit
+Verifying page content in webkit
+Page content verified in webkit
+Generated cat data: Kurilian Bobtail, Age: 6, Weight: 2.8 in webkit
+Filling out the form fields in webkit
+Form fields filled in webkit
+Submitting the form in webkit
+Form submitted in webkit
+Waiting for the form submission to complete in webkit
+Form submission completed and new cat appeared in the list in webkit
+Validating the new cat data in webkit
+New cat data validated in webkit
+Closing the context in webkit
+  ✓  7 tests/scenario5.spec.js:8:9 › Cross-browser Testing on Form Submission and Validation with Debugging and Log Output › webkit (3.3s)
+
+  7 passed (19.9s)
